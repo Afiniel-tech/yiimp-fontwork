@@ -28,6 +28,7 @@ function yaamp_get_algos()
 		'geek',
 		'globalhash',
 		'groestl',
+		'heavyhash',
 		'hex',
 		'hmq1725',
 		'honeycomb',
@@ -241,6 +242,7 @@ function getAlgoColors($algo)
 		'hsr'		=> '#aa70ff',
 		'keccak'	=> '#c0f0c0',
 		'keccakc'	=> '#c0f0c0',
+		'heavyhash'	=> '#c0f0c0'
 		'hex'		=> '#c0f0c0',
 		'honeycomb'	=> '#c0f0c0',
 		'lbry'		=> '#b0d0e0',
@@ -376,6 +378,7 @@ function getAlgoPort($algo)
 		'sonoa'		=> 8733,
 		'keccak'	=> 5133,
 		'keccakc'	=> 5134,
+		'heavyhash'	=> 5136,
 		'hex'		=> 5135,
 		'honeycomb'	=> 7777,
 		'skein2'	=> 5233,

@@ -68,6 +68,7 @@ function yaamp_get_algos()
 		'pawelhash',
 		'phi',
 		'phi2',
+		'0x10',
 		'pipe',
 		'sib',
 		'skein',
@@ -263,6 +264,7 @@ function getAlgoColors($algo)
 		'lyra2z330'	=> '#80b0f0',
 		'phi'		=> '#a0a0e0',
 		'phi2'		=> '#a0a0e0',
+		'0x10'		=> '#aba0e0',		/* ChainOX (CHOX) */
 		'pipe'		=> '#a0a0e0',
 		'polytimos'	=> '#dedefe',
 		'sib'		=> '#a0a0c0',
@@ -409,6 +411,7 @@ function getAlgoPort($algo)
 		'hsr'		=> 7433,
 		'phi'		=> 8333,
 		'phi2'		=> 8332,
+		'0x10'		=> 8335
 		'pipe'		=> 9393,
 		'polytimos'	=> 8463,
 		'skunk'		=> 8433,

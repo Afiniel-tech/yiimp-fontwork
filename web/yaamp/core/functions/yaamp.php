@@ -4,6 +4,7 @@ function yaamp_get_algos()
 {
     /* Toggle Site Algos Here */
 	return array(
+		'0x10',
 		'a5a',
 		'aergo',
 		'allium',
@@ -20,6 +21,7 @@ function yaamp_get_algos()
 		'blakecoin',
 		'blake2s',
 		'bmw512',
+		'cosa',
 		'curvehash',
 		'decred',
 		'dedal',
@@ -50,6 +52,7 @@ function yaamp_get_algos()
 		'megabtx',
 		'megamec',
 		'minotaur',
+		'minotaurx',
 		'myr-gr',
 		'neoscrypt',
 		'nist5',
@@ -194,7 +197,6 @@ function getAlgoColors($algo)
 		'scrypt'	=> '#c0c0e0',
 		'neoscrypt'	=> '#a0d0f0',
 		'scryptn'	=> '#d0d0d0',
-		'c11'		=> '#a0a0d0',
 		'decred'	=> '#f0f0f0',
 		'dedal'		=> '#f0f0f0',
 		'deep'		=> '#e0ffff',
@@ -228,6 +230,8 @@ function getAlgoColors($algo)
 		'blake'		=> '#f0f0f0',
 		'blakecoin'	=> '#f0f0f0',
 		'bmw512'	=> '#f0f0f0',
+		'c11'		=> '#a0a0d0',
+		'cosa'		=> '#a0a0d0', /* Cosanta (COSA) */
 		'curvehash'	=> '#d0a0a0',
 		'geek'		=> '#d0a0a0',
 		'groestl'	=> '#d0a0a0',
@@ -246,6 +250,7 @@ function getAlgoColors($algo)
 		'megabtx'	=> '#d0f0a0',
 		'megamec'	=> '#d0f0a0',
 		'minotaur'	=> '#d0f0a0',
+		'minotaurx'	=> '#d0f0a0',
 		'penta'		=> '#80c0c0',
 		'nist5'		=> '#c0e0e0',
 		'quark'		=> '#c0c0c0', 
@@ -261,6 +266,7 @@ function getAlgoColors($algo)
 		'lyra2z330'	=> '#80b0f0',
 		'phi'		=> '#a0a0e0',
 		'phi2'		=> '#a0a0e0',
+		'0x10'		=> '#aba0e0',		/* ChainOX (CHOX) */
 		'pipe'		=> '#a0a0e0',
 		'polytimos'	=> '#dedefe',
 		'sib'		=> '#a0a0c0',
@@ -321,6 +327,7 @@ function getAlgoPort($algo)
 		'bcd'		=> 3643,
 		'bmw512'	=> 5787,
 		'c11'		=> 3573,
+		'cosa'		=> 3574,
 		'curvehash'	=> 3343,
 		'dedal'		=> 8833,
 		'deep'		=> 3535,
@@ -407,12 +414,14 @@ function getAlgoPort($algo)
 		'hsr'		=> 7433,
 		'phi'		=> 8333,
 		'phi2'		=> 8332,
+		'0x10'		=> 8335
 		'pipe'		=> 9393,
 		'polytimos'	=> 8463,
 		'skunk'		=> 8433,
 		'tribus'	=> 8533,
 	    	'a5a'   	=> 8633,
 		'minotaur'	=> 7018,
+		'minotaurx'	=> 7019
 		'megabtx'	=> 7066,
 		'megamec'	=> 7067,
 		'astralhash'   	=> 8640,

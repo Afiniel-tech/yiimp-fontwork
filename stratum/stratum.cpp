@@ -139,6 +139,7 @@ YAAMP_ALGO g_algos[] =
 	{"lyra2zz", lyra2zz_hash, 0x100, 0, 0},
 	{"m7m", m7m_hash, 0x10000, 0, 0},
 	{"minotaur", minotaur_hash, 1, 0, 0},
+	{"minotaurx", minotaurx_hash, 1, 0, 0}, /* Litecoin Cash use  Minotaurx  */
 	{"myr-gr", groestlmyriad_hash, 1, 0, 0}, /* groestl + sha 64 */
 	{"neoscrypt", neoscrypt_hash, 0x10000, 0, 0},
 	{"nist5", nist5_hash, 1, 0, 0},

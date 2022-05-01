@@ -113,6 +113,7 @@ YAAMP_ALGO g_algos[] =
 	{"bmw", bmw_hash, 1, 0, 0},
 	{"bmw512", bmw512_hash, 0x100, 0, 0},
 	{"c11", c11_hash, 1, 0, 0},
+	{"cosa", cosa_hash, 1, 0, 0}, /*Cosanta (COSA) */
 	{"decred", decred_hash, 1, 0 },
 	{"dedal", dedal_hash, 0x100, 0, 0},
 	{"deep", deep_hash, 1, 0, 0},

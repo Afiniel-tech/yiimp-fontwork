@@ -4,6 +4,7 @@ function yaamp_get_algos()
 {
     /* Toggle Site Algos Here */
 	return array(
+		'0x10',
 		'a5a',
 		'aergo',
 		'allium',
@@ -20,6 +21,7 @@ function yaamp_get_algos()
 		'blakecoin',
 		'blake2s',
 		'bmw512',
+		'cosa',
 		'curvehash',
 		'decred',
 		'dedal',
@@ -68,7 +70,6 @@ function yaamp_get_algos()
 		'pawelhash',
 		'phi',
 		'phi2',
-		'0x10',
 		'pipe',
 		'sib',
 		'skein',
@@ -196,7 +197,6 @@ function getAlgoColors($algo)
 		'scrypt'	=> '#c0c0e0',
 		'neoscrypt'	=> '#a0d0f0',
 		'scryptn'	=> '#d0d0d0',
-		'c11'		=> '#a0a0d0',
 		'decred'	=> '#f0f0f0',
 		'dedal'		=> '#f0f0f0',
 		'deep'		=> '#e0ffff',
@@ -230,6 +230,8 @@ function getAlgoColors($algo)
 		'blake'		=> '#f0f0f0',
 		'blakecoin'	=> '#f0f0f0',
 		'bmw512'	=> '#f0f0f0',
+		'c11'		=> '#a0a0d0',
+		'cosa'		=> '#a0a0d0', /* Cosanta (COSA) */
 		'curvehash'	=> '#d0a0a0',
 		'geek'		=> '#d0a0a0',
 		'groestl'	=> '#d0a0a0',
@@ -325,6 +327,7 @@ function getAlgoPort($algo)
 		'bcd'		=> 3643,
 		'bmw512'	=> 5787,
 		'c11'		=> 3573,
+		'cosa'		=> 3574,
 		'curvehash'	=> 3343,
 		'dedal'		=> 8833,
 		'deep'		=> 3535,

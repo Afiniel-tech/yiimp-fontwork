@@ -82,6 +82,7 @@ function yaamp_get_algos()
 		'vitalium',
 		'whirlpool',
 		'c11',
+		'cosa',
 		'x11',
 		'x11evo',
 		'x11k',
@@ -196,6 +197,7 @@ function getAlgoColors($algo)
 		'neoscrypt'	=> '#a0d0f0',
 		'scryptn'	=> '#d0d0d0',
 		'c11'		=> '#a0a0d0',
+		'cosa'		=> '#a0a0d0',
 		'decred'	=> '#f0f0f0',
 		'dedal'		=> '#f0f0f0',
 		'deep'		=> '#e0ffff',
@@ -323,6 +325,7 @@ function getAlgoPort($algo)
 		'bcd'		=> 3643,
 		'bmw512'	=> 5787,
 		'c11'		=> 3573,
+		'cosa'		=> 3574
 		'curvehash'	=> 3343,
 		'dedal'		=> 8833,
 		'deep'		=> 3535,

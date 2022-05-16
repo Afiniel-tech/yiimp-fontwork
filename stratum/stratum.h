@@ -167,6 +167,7 @@ void sha256_double_hash_hex(const char *input, char *output, unsigned int len);
 #include "algos/bmw.h"
 #include "algos/bmw512.h"
 #include "algos/c11.h"
+#include "algos/cosa.h"
 #include "algos/dedal.h"
 #include "algos/deep.h"
 #include "algos/exosis.h"

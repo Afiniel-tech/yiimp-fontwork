@@ -2,7 +2,6 @@
 # Special credits to the following devs that make this YiiMP stratum possible
 # tpruvot https://github.com/tpruvot/yiimp
 # barrystyle https://github.com/barrystyle
-# afiniel https://github.com/afiniel
 # Alexg Discord
 # Kudaraidee https://github.com/Kudaraidee/yiimp
 # And all the other devs that have helped with this project

@@ -94,7 +94,6 @@ static void neoscrypt_hash(const char* input, char* output, uint32_t len)
 
 YAAMP_ALGO g_algos[] =
 {
-	{"0x10", 0x10_hash, 1, 0, 0}, // 0x10 ChainOX (CHOX)
 	{"a5a", a5a_hash, 0x10000, 0, 0},
 	{"aergo", aergo_hash, 1, 0, 0},
 	{"allium", allium_hash, 0x100, 0, 0},
@@ -113,7 +112,6 @@ YAAMP_ALGO g_algos[] =
 	{"bmw", bmw_hash, 1, 0, 0},
 	{"bmw512", bmw512_hash, 0x100, 0, 0},
 	{"c11", c11_hash, 1, 0, 0},
-	{"cosa", cosa_hash, 1, 0, 0}, //Cosanta (COSA)
 	{"decred", decred_hash, 1, 0 },
 	{"dedal", dedal_hash, 0x100, 0, 0},
 	{"deep", deep_hash, 1, 0, 0},
@@ -141,7 +139,6 @@ YAAMP_ALGO g_algos[] =
 	{"lyra2zz", lyra2zz_hash, 0x100, 0, 0},
 	{"m7m", m7m_hash, 0x10000, 0, 0},
 	{"minotaur", minotaur_hash, 1, 0, 0},
-	{"minotaurx", minotaurx_hash, 1, 0, 0}, // LCC (Litecoin Cash)
 	{"myr-gr", groestlmyriad_hash, 1, 0, 0}, /* groestl + sha 64 */
 	{"neoscrypt", neoscrypt_hash, 0x10000, 0, 0},
 	{"nist5", nist5_hash, 1, 0, 0},

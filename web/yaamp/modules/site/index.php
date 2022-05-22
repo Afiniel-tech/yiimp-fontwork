@@ -35,7 +35,7 @@ $payout_freq = (YAAMP_PAYMENTS_FREQ / 3600) . " hours";
 <li><b>Welcome to your new mining pool, domain !</b></li>
 <li>---------------------------------------------------------------------------------------------------</li>
 <li>This installation was completed using Afiniel Yiimp Pool Installer.</li>
-<li>To make any changes on this page edit: /home/yiimp-data/yiimp/site/web/yaamp/modules/site/index.php</li>
+<li>To make any changes on this page edit: /home/crypto-data/yiimp/site/web/yaamp/modules/site/index.php</li>
 <li>---------------------------------------------------------------------------------------------------</li>
 <li>&nbsp;</li>
 <li>No registration is required, we do payouts in the currency you mine. Use your wallet address as the username.</li>

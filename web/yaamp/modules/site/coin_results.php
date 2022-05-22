@@ -298,13 +298,10 @@ echo <<<end
 end;
 
 $account = '';
-if ($DCR || $DGB) $account = '*';
-
-else if ($ETH) $account = $coin->master_wallet;
-
-else if ($coin->symbol == "RNG") $account = '*';
-
-else if ($coin->symbol == "ZENX") $account = '*';
+if ($DCR || $DGB)
+    $account = '*';
+else if ($ETH)
+    $account = $coin->master_wallet;
 
 $txs = $remote->listtransactions($account, $maxrows);
 

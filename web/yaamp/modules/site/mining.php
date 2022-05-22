@@ -12,10 +12,10 @@ $height = '240px';
 
 echo <<<end
 
-<div id='resume_update_button' style='color: #444; background-color: #ffd; border: 1px solid #eea;
-	padding: 10px; margin-left: 20px; margin-right: 20px; margin-top: 15px; cursor: pointer; display: none;'
-	onclick='auto_page_resume();' align=center>
-<b>Auto refresh is paused - Click to resume</b></div>
+<div id='resume_update_button' style='color: #ffffff; background-color: #41464b; border: 1px solid #7d7d7d;
+    padding: 10px; margin-left: 20px; margin-right: 20px; margin-top: 15px; cursor: pointer; display: none;'
+    onclick='auto_page_resume();' align=center>
+    <b>Auto Refresh Is Paused - Click Here To Resume</b></div>
 
 <table cellspacing=20 width=100%>
 <tr><td valign=top width=50%>
@@ -171,7 +171,7 @@ function graph_init_price(data)
 			borderWidth: 1,
 			shadowWidth: 0,
 			shadowDepth: 0,
-			background: '#ffffff'
+			background: '#41464b'
 		},
 
 	});
@@ -220,7 +220,7 @@ function pool_hashrate_graph_init(data)
 			borderWidth: 1,
 			shadowWidth: 0,
 			shadowDepth: 0,
-			background: '#ffffff'
+			background: '#41464b'
 		},
 
 		highlighter:

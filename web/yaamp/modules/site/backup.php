@@ -20,6 +20,3 @@ for them.</li>
 </div>
 <br>
 
-<a class="twitter-timeline" href="https://twitter.com/cryptopoollife?ref_src=twsrc%5Etfw"</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<br><br>

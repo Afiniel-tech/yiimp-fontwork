@@ -103,6 +103,13 @@ if($user) echo <<<END
 </div>
 END;
 
+if($user) echo <<<END
+<div id='main_found_results'>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+</div>
+END;
+
 echo <<<END
 <div class="main-left-box">
 <div class="main-left-title">Search Wallet:</div>
@@ -123,7 +130,7 @@ foreach($recents as $addr)
 	$coin = getdbo('db_coins', $user->coinid);
 
 	if($user->username == $username)
-		echo "<tr style='background-color: #e0d3e8;'><td width=24>";
+		echo "<tr style='background-color: #41464b;'><td width=24>";
 	else
 		echo "<tr class='ssrow'><td width=24>";
 
@@ -169,10 +176,7 @@ echo <<<END
 
 </td></tr></table>
 
-<br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br>
+<br>
 
 <script>
 
@@ -188,6 +192,8 @@ function page_refresh()
 
 		main_graphs_refresh();
 		main_title_refresh();
+
+		main_found_refresh();
 	}
 }
 
@@ -207,6 +213,17 @@ function main_wallet_refresh()
 {
 	var url = "/site/wallet_results?address=$username";
 	$.get(url, '', main_wallet_ready);
+}
+
+function main_found_ready(data)
+{
+	$('#main_found_results').html(data);
+}
+
+function main_found_refresh()
+{
+	var url = "/site/wallet_found_results?address=$username";
+	$.get(url, '', main_found_ready);
 }
 
 function main_wallet_refresh_details()
@@ -337,7 +354,7 @@ function graph_init_hashrate(data, algo)
 			borderWidth: 1,
 			shadowWidth: 0,
 			shadowDepth: 0,
-			background: '#ffffff'
+			background: '#41464b'
 		},
 
 		highlighter:
@@ -392,7 +409,7 @@ function graph_earnings_init(data)
 			borderWidth: 1,
 			shadowWidth: 0,
 			shadowDepth: 0,
-			background: '#ffffff'
+			background: '#41464b'
 		},
 
 	});

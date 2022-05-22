@@ -15,8 +15,8 @@ echo <<<END
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-<meta name="description" content="cryptopool.builders for all your crypto server needs">
-<meta name="keywords" content="cryptopool,builders,anonymous,mining,pool,maxcoin,bitcoin,altcoin,auto,switch,exchange,profit,decred,scrypt,x11,x13,x14,x15,lbry,lyra2re,neoscrypt,sha256,quark,skein2">
+<meta name="description" content="Built With Afiniel Yiimpool Installer v.1.2">
+<meta name="keywords" content="anonymous,mining,pool,maxcoin,bitcoin,altcoin,auto,switch,exchange,profit,decred,scrypt,x11,x13,x14,x15,lbry,lyra2re,neoscrypt,sha256,quark,skein2,BTC,btc">
 
 END;
 
@@ -83,9 +83,10 @@ function showItemHeader($selected, $url, $name)
 function showPageHeader()
 {
     echo '<div class="tabmenu-out">';
+    echo '<a href="/"><img src="/images/logo.png"></a>';
     echo '<div class="tabmenu-inner">';
 
-    echo '&nbsp;&nbsp;<a href="/">' . YAAMP_SITE_NAME . '</a>';
+    echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/">' . YAAMP_SITE_NAME . '</a>';
 
     $action = controller()->action->id;
     $wallet = user()->getState('yaamp-wallet');
@@ -133,7 +134,7 @@ function showPageHeader()
     $eta         = ($mining->last_payout + YAAMP_PAYMENTS_FREQ) - time();
     $eta_mn      = 'in ' . round($eta / 60) . ' minutes';
 
-    echo '<span id="nextpayout" style="font-size: .8em;" title="' . $eta_mn . '">Next Payout: ' . $nextpayment . '</span>';
+    echo '<span id="nextpayout" style="font-size: .8em;" title="' . $eta_mn . '">Next Payout: ' . $nextpayment . '</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
     // echo '<span id="nextpayout" style="font-size: .8em;" title="'.$eta_mn.'">Next Payout: '.$nextpayment.' / '.$nextpaymentEUR.'</span>';
     // echo '<span id="nextpayout" style="font-size: .8em;" title="'.$eta_mn.'">Next Payout: '.$nextpayment.' UTC (US) / '.$nextpaymentEUR.' UTC+2 (EUR)</span>';
 
@@ -146,7 +147,7 @@ function showPageFooter()
     echo '<div class="footer">';
     $year = date("Y", time());
 
-    echo "<p>&copy; $year " . YAAMP_SITE_NAME . ' - ' . '<a href="https://github.com/cryptopool-builders/Multi-Pool-Installer">Built with Ultimate Crypto-Server Setup Installer</a></p>';
+    echo "<p>&copy; $year " . YAAMP_SITE_NAME . ' - ' . '<a href="https://github.com/Afiniel-tech/Yiimpool-Installer">Built With Afiniel Yiimpool Installer</a></p>';
 
     echo '</div><!-- footer -->';
 }

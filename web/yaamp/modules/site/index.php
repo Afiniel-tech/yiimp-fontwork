@@ -16,10 +16,10 @@ $min_sunday = $min_payout / 10;
 $payout_freq = (YAAMP_PAYMENTS_FREQ / 3600) . " hours";
 ?>
 
-<div id='resume_update_button' style='color: #444; background-color: #ffd; border: 1px solid #eea;
+<div id='resume_update_button' style='color: #ffffff; background-color: #41464b; border: 1px solid #7d7d7d;
     padding: 10px; margin-left: 20px; margin-right: 20px; margin-top: 15px; cursor: pointer; display: none;'
     onclick='auto_page_resume();' align=center>
-    <b>Auto refresh is paused - Click to resume</b></div>
+    <b>Auto Refresh Is Paused - Click Here To Resume</b></div>
 
 <table cellspacing=20 width=100%>
 <tr><td valign=top width=50%>
@@ -30,37 +30,40 @@ $payout_freq = (YAAMP_PAYMENTS_FREQ / 3600) . " hours";
 <div class="main-left-title">domain</div>
 <div class="main-left-inner">
 
+<center>
 <ul>
-
-<li>Welcome to your new mining pool, domain! </li>
-<li>This installation was completed using the Ultimate Crypto-Server Setup Installer.</li>
-<li>Any edits to this page should be made to, /home/crypto-data/yiimp/site/web/yaamp/modules/site/index.php</li>
+<li><b>Welcome to your new mining pool, domain !</b></li>
+<li>---------------------------------------------------------------------------------------------------</li>
+<li>This installation was completed using Afiniel Yiimp Pool Installer.</li>
+<li>To make any changes on this page edit: /home/yiimp-data/yiimp/site/web/yaamp/modules/site/index.php</li>
+<li>---------------------------------------------------------------------------------------------------</li>
 <li>&nbsp;</li>
 <li>No registration is required, we do payouts in the currency you mine. Use your wallet address as the username.</li>
 <li>&nbsp;</li>
 <li>Payouts are made automatically every <?=$payout_freq ?> for all balances above <b><?=$min_payout ?></b>, or <b><?=$min_sunday ?></b> on Sunday.</li>
 <li>For some coins, there is an initial delay before the first payout, please wait at least 6 hours before asking for support.</li>
 <li>Blocks are distributed proportionally among valid submitted shares.</li>
-
 <br/>
-
 </ul>
 </div></div>
+</center>
 <br/>
 
 <!-- Stratum Auto generation code, will automatically add coins when they are enabled and auto ready -->
 
 <div class="main-left-box">
-<div class="main-left-title">How to mine with domain</div>
+<div class="main-left-title">Generate stratum command </div>
 <div class="main-left-inner">
 
-<table>
+<center><table>
 	<thead>
 		<tr>
 			<th>Stratum Location</th>
-			<th>Coin</th>
-			<th>Wallet Address</th>
-			<th>Rig Name</th>
+			<th>Choose Coin</th>
+			<th>Your Wallet Address</th>
+			<th>Rig (opt.)</th>
+                        <th>Solo Mine</th>
+                        <th>Start Mining</th>
 		</tr>
 	</thead>
 
@@ -70,11 +73,11 @@ $payout_freq = (YAAMP_PAYMENTS_FREQ / 3600) . " hours";
 			<select id="drop-stratum" colspan="2" style="min-width: 140px; border-style:solid; padding: 3px; font-family: monospace; border-radius: 5px;">
 
 <!-- Add your stratum locations here -->
-			<option value="stratum.">US East</option>
-			<!-- <option value="us.west.">US West</option>
+			<option value="eu.">Europe</option>
+			<option value="us">US Stratum</option>
 			<option value="aus.">AUS Stratum</option>
 			<option value="cad.">CAD Stratum</option>
-			<option value="uk.">UK Stratum</option> -->
+			<option value="uk.">UK Stratum</option>
 		</select>
 	</td>
 
@@ -116,33 +119,37 @@ $payout_freq = (YAAMP_PAYMENTS_FREQ / 3600) . " hours";
 		<td>
 
 <!-- Change your demo wallet here -->
-			<input id="text-wallet" type="text" size="44" placeholder="RF9D1R3Vt7CECzvb1SawieUC9cYmAY1qoj" style="border-style:solid; border-width: thin; padding: 3px; font-family: monospace; border-radius: 5px;">
+			<input id="text-wallet" type="text" size="35" placeholder="DCj73fKJbHeDTJx7arz4z7bbknWkSDpD8h" style="border-style:solid; border-width: thin; padding: 3px; font-family: monospace; border-radius: 5px;">
 		</td>
 
 		<td>
 			<input id="text-rig-name" type="text" size="10" placeholder="001" style="border-style:solid; border-width: thin; padding: 3px; font-family: monospace; border-radius: 5px;">
 		</td>
 
+	        <td>
+			<select id="drop-solo" colspan="2" style="min-width: 80px; border-style:solid; padding: 3px; font-family: monospace; border-radius: 5px;">
+			<option value="">No</option>
+			<option value=",m=solo">Yes</option>
+			</select>
+		</td>
+
 		<td>
-			<input id="Generate!" type="button" value="Start Mining" onclick="generate()" style="border-style:solid; padding: 3px; font-family: monospace; border-radius: 5px;">
+			<input id="Generate!" type="button" value="Create String" onclick="generate()" style="border-style:solid; padding: 3px; font-family: monospace; border-radius: 5px;">
 		</td>
 	</tr>
 	<tr>
-			<td colspan="5"><p class="main-left-box" style="padding: 3px; background-color: #ffffee; font-family: monospace;" id="output">-a  -o stratum+tcp://stratum.domain:0000 -u . -p c=</p>
+			<td colspan="7"><p class="main-left-box" style="padding: 3px; color: #000000; background-color: #ffffff; font-family: monospace;" id="output">-a  -o stratum+tcp://domain:0000 -u . -p c=</p>
 		</td>
 	</tr>
 </tbody></table>
 
 <ul>
-<li>&lt;WALLET_ADDRESS&gt; must be valid for the currency you mine. <b>DO NOT USE a BTC address here, the auto exchange is disabled on these stratums</b>!</li>
-<!-- <li><b>Our stratums are now NiceHASH compatible and ASICBoost enabled, please message support if you have any issues.</b></li> -->
-<li>See the "domain coins" area on the right for PORT numbers. You may mine any coin regardless if the coin is enabled or not for autoexchange. Payouts will only be made in that coins currency.</li>
-<li>Payouts are made automatically every hour for all balances above <b><?=$min_payout
-?></b>, or <b><?=$min_sunday
-?></b> on Sunday.</li>
+<li><b>Your WALLET ADDRESS must be valid for the currency you mine !</b></li>
+<li><b>DO NOT USE a BTC address here, the auto exchange is disabled on these stratums !</b></li>
+<li>See the "domain Coins" area on the right for PORT numbers. You may mine any coin regardless if the coin is enabled or not for autoexchange. Payouts will only be made in that coins currency.</li>
 <br>
 </ul>
-</div></div><br>
+</div></div></center><br>
 
 <!-- End new stratum generation code  -->
 
@@ -180,15 +187,16 @@ endif;
 </div></div><br>
 
 <div class="main-left-box">
-<div class="main-left-title">domain Support</div>
+<div class="main-left-title">domain Links</div>
 <div class="main-left-inner">
 
 <ul class="social-icons">
-    <li><a href="http://www.facebook.com"><img src='/images/Facebook.png' /></a></li>
-    <li><a href="http://www.twitter.com"><img src='/images/Twitter.png' /></a></li>
-    <li><a href="http://www.youtube.com"><img src='/images/YouTube.png' /></a></li>
-    <li><a href="http://www.github.com"><img src='/images/Github.png' /></a></li>
     <li><a href="http://www.discord.com"><img src='/images/discord.png' /></a></li>
+    <li><a href="http://www.twitter.com"><img src='/images/Twitter.png' /></a></li>
+    <li><a href="mailto:"><img src='/images/email.png' /></a></li>
+    <li><a href="http://www.youtube.com"><img src='/images/telegram.png' /></a></li>
+    <li><a href="http://www.github.com"><img src='/images/Github.png' /></a></li>
+
 </ul>
 
 </div></div><br>
@@ -253,18 +261,19 @@ function pool_history_refresh()
 
 <script>
 function getLastUpdated(){
-    var drop1 = document.getElementById('drop-stratum');
-    var drop2 = document.getElementById('drop-coin');
+    var stratum = document.getElementById('drop-stratum');
+    var coin = document.getElementById('drop-coin');
+    var solo = document.getElementById('drop-solo');
     var rigName = document.getElementById('text-rig-name').value;
     var result = '';
 
-    result += drop2.options[drop2.selectedIndex].dataset.algo + ' -o stratum+tcp://';
-    result += drop1.value + 'domain:';
-    result += drop2.options[drop2.selectedIndex].dataset.port + ' -u ';
+    result += coin.options[coin.selectedIndex].dataset.algo + ' -o stratum+tcp://';
+    result += stratum.value + 'domain:';
+    result += coin.options[coin.selectedIndex].dataset.port + ' -u ';
     result += document.getElementById('text-wallet').value;
     if (rigName) result += '.' + rigName;
     result += ' -p c=';
-    result += drop2.options[drop2.selectedIndex].dataset.symbol;
+    result += coin.options[coin.selectedIndex].dataset.symbol + solo.value;
     return result;
 }
 function generate(){

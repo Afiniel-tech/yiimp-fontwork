@@ -4,13 +4,12 @@
 
 <div style='padding-left: 25px; width: 640px;'>
 
-<p>cryptopool.builders for all your crypto-server needs. Our team has been working in the crypto world for the last 5 years.
-We have been hired by over 50 clients during the last two years to install their crypto-pools.
+<p>cAfiniel for all your YiiMP Server needs. Our team has been working in the crypto world for the last 2 years.
 We are pleased to offer everyone this free script to help you in setting up your own pools.</p>
 
-<p>cryptopool.builders</p>
+<p>Afiniel</p>
 
-<p>16/09/2018</p>
+<p>23/04/2022</p>
 
 </div>
 

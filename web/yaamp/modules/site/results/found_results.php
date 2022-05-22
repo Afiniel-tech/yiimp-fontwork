@@ -55,6 +55,9 @@ span.block.new       { color: white; background-color: #ad4ef0; }
 span.block.orphan    { color: white; background-color: #d9534f; }
 span.block.immature  { color: white; background-color: #f0ad4e; }
 span.block.confirmed { color: white; background-color: #5cb85c; }
+span.solo	     { padding: 2px; display: inline-block; text-align: center; min-width: 15px; border-radius: 3px; color: white; background-color: #4ca6b3; }
+span.shared	     { padding: 2px; display: inline-block; text-align: center; min-width: 15px; border-radius: 3px; color: white; background-color: #4ca6b3; }
+
 b.row a { font-size: 10pt; }
 .ssrow td.row { font-size: .8em; }
 td.right { text-align: right; }
@@ -69,6 +72,7 @@ td.right { text-align: right; }
 <th align="right">Difficulty</th>
 <th align="right">Block</th>
 <th align="right">Time</th>
+<th align="right">Type</th>
 <th align="right">Status</th>
 </tr>
 </thead>
@@ -104,9 +108,7 @@ foreach ($db_blocks as $db_block)
     $difficulty = Itoa2($db_block->difficulty, 3);
     $height = number_format($db_block->height, 0, '.', ' ');
 
-    $link = $coin->createExplorerLink($coin->name, array(
-        'hash' => $db_block->blockhash
-    ));
+    $link = $coin->createExplorerLink($coin->name, array('hash' => $db_block->blockhash));
 
     $flags = $db_block->segwit ? '&nbsp;<img src="/images/ui/segwit.png" height="8px" valign="center" title="segwit"/>' : '';
 
@@ -117,9 +119,17 @@ foreach ($db_blocks as $db_block)
     echo '<td class="row right" title="found ' . $db_block->difficulty_user . '">' . $difficulty . '</td>';
     echo '<td class="row right">' . $height . '</td>';
     echo '<td class="row right">' . $d . ' ago</td>';
-    echo '<td class="row right">';
 
-    if ($db_block->category == 'orphan') echo '<span class="block orphan">Orphan</span>';
+    echo '<td class="row right">';
+    if($db_block->solo == '1') 
+	    echo '<span class="solo" title="Block was found by solo miner">Solo</span>';
+    else
+            echo '<span class="shared" title="Block was found by shared miners">Shared</span>';
+    echo "</td>";
+
+    echo '<td class="row right">';
+    if ($db_block->category == 'orphan')
+             echo '<span class="block orphan">Orphan</span>';
 
     else if ($db_block->category == 'immature')
     {

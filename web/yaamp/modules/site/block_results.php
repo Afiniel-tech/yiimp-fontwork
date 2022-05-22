@@ -30,7 +30,14 @@ showTableSorter('maintable', "{
 
 echo <<<end
 <style type="text/css">
-td.orphan { color: darkred; }
+span.block { padding: 2px; display: inline-block; text-align: center; min-width: 15px; border-radius: 3px; }
+span.block.new       { color: white; background-color: #ad4ef0; }
+span.block.orphan    { color: white; background-color: #d9534f; }
+span.block.immature  { color: white; background-color: #f0ad4e; }
+span.block.confirmed { color: white; background-color: #5cb85c; }
+span.block2          { padding: 2px; display: inline-block; text-align: center; min-width: 35px; border-radius: 3px; margin-right: 5px; }
+span.block2.solo     { color: white;  background-color: #4ca6b3 !important; }
+span.block2.shared   { color: white;  background-color: #4ca6b3 !important; }
 </style>
 
 <thead>
@@ -40,6 +47,7 @@ td.orphan { color: darkred; }
 <th>Time</th>
 <th>Height</th>
 <th>Amount</th>
+<th>Type</th>
 <th>Status</th>
 <th>Difficulty</th>
 <th>Share Diff</th>
@@ -62,7 +70,7 @@ foreach ($db_blocks as $db_block)
     // 	$blockext = $remote->getblock($db_block->blockhash);
     // 	$tx = $remote->gettransaction($blockext['tx'][0]);
     // 	$db_block->category = $tx['details'][0]['category'];
-    if ($db_block->category == 'immature') echo "<tr style='background-color: #e0d3e8;'>";
+    if ($db_block->category == 'immature') echo "<tr style='background-color: #41464b;'>";
     else echo "<tr class='ssrow'>";
 
     echo '<td><img width="16" src="' . $coin->image . '"></td>';
@@ -78,13 +86,20 @@ foreach ($db_blocks as $db_block)
     //	$db_block->save();
     $d = datetoa2($db_block->time);
     echo '<td data="' . $db_block->time . '"><b>' . $d . ' ago</b></td>';
-    echo '<td>' . $coin->createExplorerLink($db_block->height, array(
-        'height' => $db_block->height
-    )) . '</td>';
+    echo '<td>' . $coin->createExplorerLink($db_block->height, array('height' => $db_block->height)) . '</td>';
     echo '<td>' . $db_block->amount . '</td>';
+
+    echo '<td>';
+    if($db_block->solo == '1') 
+	    echo '<span class="block2 solo" title="Block was found by solo miner">Solo</span>';
+    else
+	    echo '<span class="block2 shared" title="Block was found by shared miners">Shared</span>'; 
+    echo "</td>";
+
     echo '<td class="' . strtolower($db_block->category) . '">';
 
-    if ($db_block->category == 'orphan') echo "Orphan";
+    if ($db_block->category == 'orphan')
+             echo '<span class="block orphan">Orphan</span>';
 
     else if ($db_block->category == 'immature')
     {
@@ -94,14 +109,17 @@ foreach ($db_blocks as $db_block)
             $t = (int)($coin->mature_blocks - $db_block->confirmations) * $coin->block_time;
             $eta = "ETA: " . sprintf('%dh %02dmn', ($t / 3600) , ($t / 60) % 60);
         }
-        echo "<span title=\"$eta\">Immature ({$db_block->confirmations})</span>";
+        echo '<span class="block immature" title="'.$eta.'">Immature ('.$db_block->confirmations.'/'.$coin->mature_blocks.')</span>';
     }
 
-    else if ($db_block->category == 'generate') echo 'Confirmed';
+    else if ($db_block->category == 'generate')
+             echo '<span class="block confirmed">Confirmed</span>';
 
-    else if ($db_block->category == 'stake') echo "Stake ({$db_block->confirmations})";
+    else if ($db_block->category == 'stake')
+             echo "Stake ({$db_block->confirmations})";
 
-    else if ($db_block->category == 'generated') echo 'Stake';
+    else if ($db_block->category == 'generated')
+             echo '<span class="block stake">Stake</span>';
 
     echo "</td>";
 
@@ -116,6 +134,7 @@ foreach ($db_blocks as $db_block)
         $user = getdbo('db_accounts', $db_block->userid);
         $finder = $user ? substr($user->username, 0, 7) . '...' : '';
     }
+
     echo '<td>' . $finder . '</td>';
     echo '<td style="font-size: .8em; font-family: monospace;">';
     echo $coin->createExplorerLink($db_block->blockhash, array(

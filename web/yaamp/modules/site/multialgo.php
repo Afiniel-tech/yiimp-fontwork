@@ -53,7 +53,7 @@ goto start
 <p>By default, we use our built in factor table to normalize the profitability. The scrypt algo
 is the reference with a factor of 1.</p>
 
-<pre class="main-left-box" style='padding: 3px; font-size: .9em; background-color: #ffffee; font-family: monospace;'>
+<pre class="main-left-box" style='padding: 3px; font-size: .9em; background-color: #ffffff; font-family: monospace;'>
 'scrypt'	=> 1,
 'scryptn'	=> 0.5,
 'c11'		=> 2.0,
